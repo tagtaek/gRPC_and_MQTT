@@ -3,7 +3,7 @@ import time
 import json
 
 message_count = 0
-threshold = 1000
+threshold = 5
 down_start_time = 0
 
 def on_message(client, userdata, msg):
@@ -18,7 +18,7 @@ def on_message(client, userdata, msg):
     current_time = time.time()
     
     delay = current_time - start_time
-    print(f"Message {message['data']} delay: {delay} seconds")
+    print(f"Message delay: {delay} seconds")
     
     if message_count == 1:
         down_start_time = time.time()
@@ -33,10 +33,10 @@ port = 1883
 topic = "test/topic"
 
 client = mqtt.Client()
-client.connect(broker, port, 60)
-
-client.subscribe(topic)
+client.on_connect = lambda client, userdata, flags, rc: client.subscribe(topic)
 client.on_message = on_message
+
+client.connect(broker, port, 60)
 
 print('Waiting for messages. To exit press CTRL+C')
 client.loop_forever()

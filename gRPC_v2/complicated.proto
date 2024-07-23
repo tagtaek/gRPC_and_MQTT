@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+service SendService {
+    rpc SendData (Message) returns (Empty);
+}
+
+message Message{
+    string text = 1;
+    int32 number = 2;
+    double float_number = 3;
+    bool flag = 4;
+    repeated string string_list = 5;
+    map<string, string> string_map = 6;
+    nestedMessage nested = 7;
+}
+
+message NestedMessage {
+    string nested_text = 1;
+    int32 nested_number = 2;
+}
+
+message Empty {}

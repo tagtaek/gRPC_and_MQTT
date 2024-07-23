@@ -9,12 +9,13 @@ topic = "test/topic"
 client = mqtt.Client()
 client.connect(broker, port, 60)
 
+large_array = [i for i in range(12500000)]
 start_time = time.time()  # 시작 타임스탬프 기록
 upload_time = 0
 
-for i in range(1, 1001):
+for i in range(1, 6):
     message = {
-        'data': i,
+        'data': large_array,
         'start_time': start_time
     }
     client.publish(topic, json.dumps(message)) # 메세지를 json으로 변환

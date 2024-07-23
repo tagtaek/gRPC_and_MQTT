@@ -1,0 +1,69 @@
+{
+    "user": {
+        "id": 0,
+        "name": "User 0",
+        "email": "user0@example.com",
+        "address": {
+            "street": "0 Main St",
+            "city": "Anytown",
+            "state": "CA",
+            "zipcode": "12345"
+        },
+        "phones": [
+            {
+                "type": "home",
+                "number": "555-1234"
+            },
+            {
+                "type": "work",
+                "number": "555-5678"
+            }
+        ],
+        "preferences": {
+            "newsletter": false,
+            "notifications": [
+                "sms",
+                "push"
+            ]
+        },
+        "history": [
+            {
+                "timestamp": "2024-01-01T12:00:00Z",
+                "event": "login"
+            },
+            {
+                "timestamp": "2024-01-02T15:00:00Z",
+                "event": "purchase",
+                "details": {
+                    "item": "Laptop",
+                    "price": 1200
+                }
+            }
+        ]
+    },
+    "transaction": {
+        "id": "txn_000",
+        "amount": 212.68197822043274,
+        "currency": "USD",
+        "items": [
+            {
+                "product_id": "prod_000",
+                "quantity": 3,
+                "price": 63.29679791144484
+            },
+            {
+                "product_id": "prod_001",
+                "quantity": 4,
+                "price": 124.9422948593173
+            }
+        ],
+        "payment_method": {
+            "type": "credit_card",
+            "provider": "Amex",
+            "card_number": "**** **** **** 1234",
+            "expiration": "12/25"
+        },
+        "status": "completed",
+        "created_at": "2024-07-23T04:37:05Z"
+    }
+}
