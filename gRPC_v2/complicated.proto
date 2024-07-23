@@ -11,7 +11,8 @@ message Message{
     bool flag = 4;
     repeated string string_list = 5;
     map<string, string> string_map = 6;
-    nestedMessage nested = 7;
+    NestedMessage nested = 7;
+    int64 start_time = 8;
 }
 
 message NestedMessage {
