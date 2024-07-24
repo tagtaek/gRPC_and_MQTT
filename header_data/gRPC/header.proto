@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+service Sendservice {
+    rpc SendData(MyData) returns (Empty);
+}
+
+message MyData {
+    string data = 1;
+}
+
+message Empty {}
