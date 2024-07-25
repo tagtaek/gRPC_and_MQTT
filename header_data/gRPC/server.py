@@ -12,8 +12,8 @@ class SendServiceServicer(header_pb2_grpc.SendserviceServicer):
         current_time = time.time()
         delay = current_time - start_time
         # print received metadata
-        for key, value in context.invocation_metadata():
-            print(f"Received header {key}: {value}")
+        # for key, value in context.invocation_metadata():
+        #     print(f"Received header {key}: {value}")
         print(f'Message delay: {delay} seconds')
         return header_pb2.Empty()
 
